@@ -1,3 +1,5 @@
+import java.util.*;
+
 class mergesort {
   public static void print(int[] numbers) {
     for (int i : numbers) {
@@ -6,7 +8,8 @@ class mergesort {
   }
 
   public static void mergeSort(int[] numbers) {
-    // split ,// merge
+
+
     int inputLength = numbers.length;
     if (inputLength < 2)
       return;
@@ -54,11 +57,17 @@ class mergesort {
 
   public static void main(String[] args) {
     System.out.println("Mergesort");
-    int[] numbers = { 2, 2, 1, 0, 1 };
-    System.out.println("before");
+    System.out.println("Enter the size of array");
+    Scanner sc = new Scanner(System.in);
+    int no = sc.nextInt();
+    int[] numbers = new int[no];
+    for (int i = 0; i < no; i++) {
+      numbers[i] = sc.nextInt();
+    }
+    System.out.println("before merge sort");
     print(numbers);
     mergeSort(numbers);
-    System.out.println("\nafter");
+    System.out.println("\nafter merge sort");
     print(numbers);
   }
 }
